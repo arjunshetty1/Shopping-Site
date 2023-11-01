@@ -19,14 +19,14 @@ const ShopContextProvider = (props) => {
   const [cart, setcart] = useState(getDefaultCart);
 
   const addToCart = (itemId) => {
-    setcart((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
+    setcart({ ...cart, [itemId]: cart[itemId] + 1 });
   };
 
   const removeToCart = (itemId) => {
     setcart((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
   const contextValue = { addToCart, removeToCart, cart };
-  console.log(cart);
+  console.log("Nezt", cart);
   return (
     <ShopContext.Provider value={contextValue}>
       {props.children}
