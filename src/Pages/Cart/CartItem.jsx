@@ -2,12 +2,11 @@ import { ShopContext } from "../../Context/ShopContext";
 import { useContext } from "react";
 
 const CartItem = ({ item }) => {
-  const { addToCart, cart, removeFromCart,finalCost } = useContext(ShopContext);
+  const { addToCart, cart, removeFromCart } = useContext(ShopContext);
   const { id, productName, productImage, price } = item;
 
   const PrdTotalCost = price * cart[id];
-  console.log("prd cost",PrdTotalCost);
-  console.log("here",finalCost);
+  console.log("Total Cost Of Each", PrdTotalCost);
   return (
     <div className="cartItem">
       <img className="w-56" src={productImage} />

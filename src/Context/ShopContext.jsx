@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const ShopContext = createContext(null);
 
@@ -17,9 +17,9 @@ const getDefaultCart = () => {
 
 const ShopContextProvider = (props) => {
   const [cart, setCart] = useState(getDefaultCart);
-  const [finalCost, setFinalCost] = useState(0);
 
   const addToCart = (itemId) => {
+    console.log("id", itemId);
     setCart({ ...cart, [itemId]: cart[itemId] + 1 });
   };
 
@@ -27,33 +27,7 @@ const ShopContextProvider = (props) => {
     setCart((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
-
-
-
-  //Total Cost :
-  const calculateTotalCost = (cart) => {
-    let totalCost = 0;
-
-    for (const itemId in cart) {
-      totalCost += cart[itemId];
-    }
-
-    return totalCost;
-  };
-
-  useEffect(() => {
-    const finalCost = calculateTotalCost(cart);
-    setFinalCost(finalCost);
-    console.log("Final Cost:", finalCost);
-  }, [cart]);
-
-  console.log("damn", finalCost);
-  //Total Cost End
-
-
-
-
-  const contextValue = { addToCart, removeFromCart, cart,finalCost };
+  const contextValue = { addToCart, removeFromCart, cart };
 
   return (
     <ShopContext.Provider value={contextValue}>
