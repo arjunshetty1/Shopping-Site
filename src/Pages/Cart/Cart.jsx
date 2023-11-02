@@ -13,8 +13,7 @@ const Cart = () => {
       <div className="cartItems flex justify-around px-10 mt-10">
         {PRODUCTS.map((item) => {
           if (cart[item.id] !== 0) {
-            return <CartItem item={item} />
-            
+            return <CartItem item={item} />;
           }
         })}
       </div>
