@@ -23,12 +23,12 @@ To run the project locally, follow these steps:
 
 1. **Clone the repository:**
    ```
-   git clone <repository-url>
+   git clone <https://github.com/arjunshetty1/Shopping-Site>
    ```
 
 2. **Install Dependencies:**
    ```
-   cd <project-folder>
+   cd <SHOPPING>
    npm install
    ```
 
@@ -37,7 +37,7 @@ To run the project locally, follow these steps:
    npm run dev
    ```
 
-The site should now be running on `http://localhost:3000`.
+The site should now be running on `http://localhost:5173`.
 
 ## Project Structure
 
