@@ -1,6 +1,5 @@
 import { PRODUCTS } from "../../Products";
 import Product from "./Product";
-import { ShopContext } from "../../Context/ShopContext"; 
 const Shop = () => {
   return (
     <div className="shop max-w-full">
